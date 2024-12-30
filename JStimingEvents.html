@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Timing Events</title>
+    <style>
+      div {
+        font-size: 20px;
+        display: block;
+        margin-top: 50px;
+        text-align: center;
+      }
+      a {
+        font-size: 20px;
+        display: block;
+        margin-top: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hello">Hello!</div>
+    <div id="currentDate"></div>
+    <div id="milliseconds"></div>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/setTimeout"
+      >setTimeout()</a
+    >
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/setInterval"
+      >setInterval()</a
+    >
+    <script>
+      // setTimeout(function, milliseconds) - executes a function, after waiting a specified number of milliseconds
+      let hello = document.getElementById("hello");
+      function sayMingalarbar() {
+        hello.innerHTML = "Mingalarbar!";
+      } // changes the text in the div with the id of hello from "Hello!" to "Mingalarbar!"
+
+      setTimeout(sayMingalarbar, 2000); // waits for 3 seconds before executing the sayHello function
+
+      // different way to write the above code
+      setTimeout(function () {
+        hello.innerHTML = "Goodbye!";
+      }, 4000); // waits for 4 seconds before changing the text in the div with the id of hello from "Mingalarbar!" to "Goodbye!"
+
+      // setInterval(function, milliseconds) - executes a function, over and over again, at specified time intervals
+      let currentDate = document.getElementById("currentDate");
+      setInterval(function () {
+        currentDate.innerHTML = new Date().toLocaleTimeString();
+      }, 1000); // updates the text in the div with the id of date every second with the current time in the format of hours:minutes:seconds
+
+      let milliseconds = document.getElementById("milliseconds");
+      setInterval(function () {
+        milliseconds.innerHTML = new Date().getMilliseconds();
+      }, 1);
+    </script>
+  </body>
+</html>

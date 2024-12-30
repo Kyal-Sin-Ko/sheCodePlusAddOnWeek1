@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Select</title>
+    <style>
+      select {
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+       label {
+        margin: 10px;
+        display: block;
+     }
+        
+    </style>
+  </head>
+  <body>
+    <!-- select ( dropdown list) -->
+    <label for="options">Select: </label>
+    <select name="options" id="options">
+      <option value="">Select an option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </select>
+
+<!-- create a select element with 5 fruits -->
+    <label for="fruits">What is your favorite fruit?</label>
+    <select name=fruits"" id="fruits">
+        <option value="">Select a fruit</option>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="mango">Mango</option>
+        <option value="peach">Peach</option>
+    </select>
+
+<!-- create a select element with the 3 primary colors -->
+    <label for="colors">What is your favorite color?</label>
+    <select name="colors" id="colors">
+        <option value="">Select a color</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        <option value="blue">Blue</option>
+    </select>
+    <script>
+        let colors = document.getElementById("colors");
+        colors.addEventListener("change", function () {
+            if (colors.value === "red") {
+                alert("❤️");
+            } else if (colors.value === "blue") {
+                alert("💙");
+            } else if (colors.value === "yellow") {
+                alert("💛");
+            } else if (colors.value === "") {
+                alert("Please, choose your favorite color!");
+            }
+        });
+    </script>
+    <script>
+      let options = document.getElementById("options"); // get the select element
+      console.log(options); // <select name="options" id="options">...</select>
+      console.log(options.value); // 1
+      options.addEventListener("change", function () {
+        console.log(options.value); // 2
+        if (options.value.length > 0) {
+          //   alert("You selected option " + options.value);
+          if (options.value === "1") {
+            alert("One");
+          } else if (options.value === "2") {
+            alert("Two");
+          } else if (options.value === "3") {
+            alert("Three");
+          } else if (options.value === "4") {
+            alert("Four");
+          }
+        } else {
+          alert("Please, select an option!");
+        }
+      }); // addEventListener - listen for changes in the select element
+    </script>
+  </body>
+</html>

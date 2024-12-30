@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Inputs</title>
+    <style>
+      input {
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      label {
+        margin: 10px;
+        display: block;
+      }
+      .inline-block {
+        display: inline-block;
+      }
+      a {
+        display: block;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- action = 'url the form will be submitted to'
+       name (used to reference elements in a JavaScript - to reference form data after a form is submitted)
+      -->
+      <form action="/submit">
+        <div>
+          <!-- 
+        give the input an ID - define label is for - clicks on the label ~> focus on the input field  
+        input:text
+        type (type of the input)
+        placeholder (text that appears in the input field)
+        required (input field must be filled)
+        autofocus (input field is focused when the page is loaded)
+        autocomplete = on/off
+        autocapitalize = on/off
+        -->
+          <label for="first-name">First Name: </label>
+          <input
+            type="text"
+            id="first-name"
+            placeholder="Enter your first name here"
+            name="first-name"
+            autofocus
+            required />
+        </div>
+        <div>
+          <label for="last-name">Last Name: </label>
+          <input
+            type="text"
+            id="last-name"
+            placeholder="Enter your last name here"
+            name="last-name"
+            autocomplete="on"
+            autocapitalize="on"
+            required />
+        </div>
+        <div>
+          <label for="number">Number: </label>
+          <input type="number" id="number" name="number" />
+        </div>
+        <div>
+          <label for="search">Search: </label>
+          <input type="search" id="search" name="search" />
+        </div>
+        <div>
+          <label for="date">Date: </label>
+          <input type="date" id="date" name="date" />
+        </div>
+        <div>
+          <label for="time">Time: </label>
+          <input type="time" id="time" name="time" />
+        </div>
+        <div>
+          <label for="color">Color: </label>
+          <input type="color" id="color" name="color" />
+        </div>
+        <div>
+          <!-- url (defines a filed for entering a URL - validates the format of the URL ) -->
+          <label for="url">URL: </label>
+          <input
+            type="url"
+            id="url"
+            placeholder="https://example.com"
+            name="url" />
+        </div>
+        <div>
+          <!-- email (defines a filed for entering an email address - validates the format of the email ) -->
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@mail.com" />
+        </div>
+        <div>
+          <!-- radio 
+          same 'name' for radio buttons - only one radio button can be selected at a time
+          checked (default checked radio button)
+          value (specifies the data that will be submitted to the server when the respective input is selected)
+        -->
+          <label>Radio: </label>
+          <input type="radio" name="radio" id="radiobtn1" value="1" checked />
+          <label for="radiobtn1" class="inline-block">1</label>
+          <input type="radio" name="radio" id="radiobtn2" value="2" />
+          <label for="radiobtn2" class="inline-block">2</label>
+        </div>
+        <div>
+          <!-- checkbox -->
+          <label>Checkbox:</label>
+          <div>
+            <input type="checkbox" name="checkbox" id="checkbox1" value="1" />
+            <label for="checkbox1" class="inline-block">1</label>
+          </div>
+          <div>
+            <input type="checkbox" name="checkbox" id="checkbox2" value="2" />
+            <label for="checkbox2" class="inline-block">2</label>
+          </div>
+        </div>
+        <div>
+          <!-- value (what the button says) -->
+          <input type="submit" value="Submit Button" />
+        </div>
+      </form>
+    </div>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
+      https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input\
+    </a>
+  </body>
+</html>
