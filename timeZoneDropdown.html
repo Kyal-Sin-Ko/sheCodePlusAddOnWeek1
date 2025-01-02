@@ -21,36 +21,46 @@
   <body>
     <select name="timezones" id="timezones">
       <option value="">Select a city</option>
-      <option value="paris">Paris 🇫🇷</option>
-      <option value="tokyo">Tokyo 🇯🇵</option>
-      <option value="sydney">Sydney 🇦🇺</option>
+      <option value="Europe/Paris">Paris 🇫🇷</option>
+      <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+      <option value="Australia/Sydney">Sydney 🇦🇺</option>
     </select>
     <script>
       // alert the current date and time of the selected city such as : "It is Saturday, October 8, 2023 2:51 PM in Europe/Paris"
       let timezones = document.getElementById("timezones");
+
       timezones.addEventListener("change", function () {
-        if (timezones.value === "paris") {
-          alert(
-            `It is ${moment()
-              .tz("Europe/Paris")
-              .format("dddd, MMMM Do, YYYY h:mm A")} in Europe/Paris`
-          );
-        } else if (timezones.value === "tokyo") {
-          alert(
-            `It is ${moment()
-              .tz("Asia/Tokyo")
-              .format("dddd, MMMM Do, YYYY h:mm A")} in Asia/Tokyo`
-          );
-        } else if (timezones.value === "sydney") {
-          alert(
-            `It is ${moment()
-              .tz("Australia/Sydney")
-              .format("dddd, MMMM Do, YYYY h:mm A")} in Australia/Sydney`
-          );
-        } else if (timezones.value === "") {
-          alert("Please select a time zone");
+        if (timezones.value.length > 0) {
+          let currentTime = moment()
+            .tz(timezones.value)
+            .format("dddd, MMMM D, YYYY h:mm A");
+
+          alert(`It is ${currentTime} in ${timezones.value}`);
         }
       });
+      //   timezones.addEventListener("change", function () {
+      //     if (timezones.value === "paris") {
+      //       alert(
+      //         `It is ${moment()
+      //           .tz("Europe/Paris")
+      //           .format("dddd, MMMM Do, YYYY h:mm A")} in Europe/Paris`
+      //       );
+      //     } else if (timezones.value === "tokyo") {
+      //       alert(
+      //         `It is ${moment()
+      //           .tz("Asia/Tokyo")
+      //           .format("dddd, MMMM Do, YYYY h:mm A")} in Asia/Tokyo`
+      //       );
+      //     } else if (timezones.value === "sydney") {
+      //       alert(
+      //         `It is ${moment()
+      //           .tz("Australia/Sydney")
+      //           .format("dddd, MMMM Do, YYYY h:mm A")} in Australia/Sydney`
+      //       );
+      //     } else if (timezones.value === "") {
+      //       alert("Please select a time zone");
+      //     }
+      //   });
     </script>
   </body>
 </html>
